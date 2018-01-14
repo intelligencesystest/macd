@@ -29,14 +29,14 @@ int main() {
 	    fileName = rootPath + csvFileNames[i] + ".csv";
 	    readFileStream.open(fileName);
 		if(!readFileStream){
-			cerr << "Couldn't open: " << fileName << endl;
+			cerr << "Error: Couldn't open: " << fileName << endl;
 			return -1;
 		}
 		while(getline(readFileStream, line, parser.getEndOfLineDelimiter())){
 		cout << "read line: " << line << endl;
 		csvFields = parser.tokenizeString(line, parser.getCsvDelimiter());
 
-		cout << "# of fields: " << csvFields.size();
+		cout << "Number of fields: " << csvFields.size();
 		cout <<endl;
 		}
 		//close file stream after use to associate with another file
